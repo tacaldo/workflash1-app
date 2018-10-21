@@ -1,7 +1,7 @@
 import { Job } from './job';
 
 export const JOBS: Job[] = [
-  { id: 11, name: 'Mr. Nice..' },
+  { id: 11, name: 'Mr. Nice....' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },
   { id: 14, name: 'Celeritas' },
