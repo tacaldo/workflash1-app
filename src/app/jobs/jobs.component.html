@@ -1,7 +1,21 @@
-<h2>My Mock Jobs...</h2>
+<h2>My Job</h2>
 <ul class="jobs">
-  <li *ngFor="let job of jobs">
-        <span class="badge">{{job.id}}</span> {{job.name}}
+  <li *ngFor="let job of jobs"
+    [class.selected]="job === selectedJob"
+    (click)="onSelect(job)">
+    <span class="badge">{{job.id}}</span> {{job.name}}
   </li>
 </ul>
 
+
+<div *ngIf="selectedJob">
+
+    <h2>{{selectedJob.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedJob.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedJob.name" placeholder="name">
+      </label>
+    </div>
+  
+ </div>
