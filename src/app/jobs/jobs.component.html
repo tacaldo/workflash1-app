@@ -1,4 +1,4 @@
-<h2>My Job</h2>
+<h2>My Jobs</h2>
 <ul class="jobs">
   <li *ngFor="let job of jobs"
     [class.selected]="job === selectedJob"
@@ -7,8 +7,9 @@
   </li>
 </ul>
 
+<app-job-detail [job]="selectedJob"></app-job-detail>
 
-<div *ngIf="selectedJob">
+<!-- <div *ngIf="selectedJob">
 
     <h2>{{selectedJob.name | uppercase}} Job Details</h2>
     <div><span>id: </span>{{selectedJob.id}}</div>
@@ -18,4 +19,4 @@
       </label>
     </div>
   
- </div>
+ </div> -->
