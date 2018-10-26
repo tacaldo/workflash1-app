@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { Job } from '../job';
 import { JOBS } from '../mock-jobs';
 import { Job } from '../job';
+import { JobService } from '../services/job.service';
+
 
 @Component({
   selector: 'app-jobs',
@@ -11,15 +12,17 @@ import { Job } from '../job';
 export class JobsComponent implements OnInit {
 
 
-  jobs = JOBS;
+  //jobs = JOBS;
+  jobs: Job[];
+
 
   selectedJob: Job;
 
-  constructor() { }
-
+  constructor(private jobService: JobService) { }
 
 
   ngOnInit() {
+    this.getJobs();
   }
 
     onSelect(job: Job): void {
@@ -27,6 +30,10 @@ export class JobsComponent implements OnInit {
     // this.newMethod(job);
     }
 
+
+    getJobs(): void {
+      this.jobs = this.jobService.getJobs();
+    }
 
   private newMethod(job: Job) {
     alert('testthispopup...for:\n' + job.name);
