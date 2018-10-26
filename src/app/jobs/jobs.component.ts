@@ -24,9 +24,13 @@ export class JobsComponent implements OnInit {
 
     onSelect(job: Job): void {
     this.selectedJob = job;
-    // alert('testthispopup...for:\n' + job.name);
+    // this.newMethod(job);
     }
 
+
+  private newMethod(job: Job) {
+    alert('testthispopup...for:\n' + job.name);
+  }
 }
 
 
