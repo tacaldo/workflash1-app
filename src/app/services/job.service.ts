@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Job } from '../job';
 import { JOBS } from '../mock-jobs';
 import { Observable, of } from 'rxjs';
+import { MessageService } from './message.service';
 
 
 @Injectable({
@@ -9,14 +10,14 @@ import { Observable, of } from 'rxjs';
 })
 export class JobService {
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
-  // getJobs(): Job[] {
-  //   return JOBS;
 
     getJobs(): Observable<Job[]> {
+    // TODO: send the message _after_ fetching the heroes
+      this.messageService.add('JobService: fetched jobs');
       return of(JOBS);
     }
 
-    
+
   }
