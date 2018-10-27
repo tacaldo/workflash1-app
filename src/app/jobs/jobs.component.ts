@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JOBS } from '../mock-jobs';
+// import { JOBS } from '../mock-jobs';
 import { Job } from '../job';
 import { JobService } from '../services/job.service';
 
@@ -11,12 +11,12 @@ import { JobService } from '../services/job.service';
 })
 export class JobsComponent implements OnInit {
 
+  selectedJob: Job;
 
   //jobs = JOBS;
   jobs: Job[];
 
 
-  selectedJob: Job;
 
   constructor(private jobService: JobService) { }
 
