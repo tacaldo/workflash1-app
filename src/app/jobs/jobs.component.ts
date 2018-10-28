@@ -11,7 +11,7 @@ import { JobService } from '../services/job.service';
 })
 export class JobsComponent implements OnInit {
 
-  selectedJob: Job;
+  // selectedJob: Job;
 
   //jobs = JOBS;
   jobs: Job[];
