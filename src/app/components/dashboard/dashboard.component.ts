@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
 
   getJobs(): void {
     this.jobService.getJobs()
-      .subscribe(jobs => this.jobs = jobs.slice(1, 5));
+    .subscribe(jobs => this.jobs = jobs.slice(1, 5));
   }
 }
 

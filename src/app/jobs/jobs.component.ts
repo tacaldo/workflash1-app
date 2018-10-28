@@ -25,10 +25,10 @@ export class JobsComponent implements OnInit {
     this.getJobs();
   }
 
-    onSelect(job: Job): void {
-    this.selectedJob = job;
+    // onSelect(job: Job): void {
+    // this.selectedJob = job;
     // this.newMethod(job);
-    }
+    // }
 
 
     // getJobs(): void {
