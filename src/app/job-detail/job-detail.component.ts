@@ -35,4 +35,8 @@ export class JobDetailComponent implements OnInit {
       .subscribe(job => this.job = job);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+  
 }
