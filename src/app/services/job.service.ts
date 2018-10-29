@@ -6,6 +6,10 @@ import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -42,8 +46,25 @@ export class JobService {
     );
   }
 
+  /** PUT: update the job on the server */
+updateJob (job: Job): Observable<any> {
+  return this.http.put(this.jobsUrl, job, httpOptions).pipe(
+    tap(_ => this.log(`updated job id=${job.id}`)),
+    catchError(this.handleError<any>('updateJob'))
+  );
+}
 
-    /** Log a HeroService message with the MessageService */
+/** POST: add a new hero to the server */
+addJob (job: Job): Observable<Job> {
+  return this.http.post<Job>(this.jobsUrl, job, httpOptions).pipe(
+    tap((job: Job) => this.log(`added job w/ id=${job.id}`)),
+    catchError(this.handleError<Job>('addJob'))
+  );
+}
+
+
+
+    /** Log a JobService message with the MessageService */
     private log(message: string) {
       this.messageService.add(`JobService: ${message}`);
     }

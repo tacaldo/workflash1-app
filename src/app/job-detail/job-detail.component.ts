@@ -38,5 +38,11 @@ export class JobDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-  
+
+  save(): void {
+    this.jobService.updateJob(this.job)
+      .subscribe(() => this.goBack());
+  }
+
+
 }

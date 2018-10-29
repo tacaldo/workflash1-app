@@ -39,8 +39,16 @@ export class JobsComponent implements OnInit {
           .subscribe(jobs => this.jobs = jobs);
     }
 
-  
+    add(name: string): void {
+      name = name.trim();
+      if (!name) { return; }
+      this.jobService.addJob({ name } as Job)
+        .subscribe(job => {
+          this.jobs.push(job);
+        });
+    }
 
+  
   private newMethod(job: Job) {
     alert('testthispopup...for:\n' + job.name);
   }

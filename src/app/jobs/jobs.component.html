@@ -1,4 +1,13 @@
 <h2>My Jobs</h2>
+<div>
+  <label>Job name:
+    <input #jobName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(jobName.value); jobName.value=''">
+    add
+  </button>
+</div>
 <ul class="jobs">
     <li *ngFor="let job of jobs">
         <a routerLink="/detail/{{job.id}}">
@@ -6,16 +15,3 @@
         </a>
     </li>
 </ul>
-<!-- <app-job-detail [job]="selectedJob"></app-job-detail> -->
-
-<!-- <div *ngIf="selectedJob">
-
-    <h2>{{selectedJob.name | uppercase}} Job Details</h2>
-    <div><span>id: </span>{{selectedJob.id}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="selectedJob.name" placeholder="name">
-      </label>
-    </div>
-  
- </div> -->
