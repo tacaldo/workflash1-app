@@ -12,6 +12,8 @@
     <li *ngFor="let job of jobs">
         <a routerLink="/detail/{{job.id}}">
           <span class="badge">{{job.id}}</span> {{job.name}}
+          <button class="delete" title="delete job"
+          (click)="delete(job)">x</button>
         </a>
     </li>
 </ul>

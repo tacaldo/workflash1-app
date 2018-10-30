@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { JobSearchComponent } from './components/job-search/job-search.component';
 
 
 
@@ -35,7 +36,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
     JobsComponent,
     JobDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    JobSearchComponent
   ],
   bootstrap: [AppComponent]
 

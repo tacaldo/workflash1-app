@@ -48,7 +48,11 @@ export class JobsComponent implements OnInit {
         });
     }
 
-  
+    delete(job: Job): void {
+      this.jobs = this.jobs.filter(j => j !== job);
+      this.jobService.deleteJob(job).subscribe();
+    }
+      
   private newMethod(job: Job) {
     alert('testthispopup...for:\n' + job.name);
   }

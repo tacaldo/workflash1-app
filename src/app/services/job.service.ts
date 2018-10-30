@@ -62,6 +62,29 @@ addJob (job: Job): Observable<Job> {
   );
 }
 
+/** DELETE: delete the job from the server */
+deleteJob (job: Job | number): Observable<Job> {
+  const id = typeof job === 'number' ? job : job.id;
+  const url = `${this.jobsUrl}/${id}`;
+
+  return this.http.delete<Job>(url, httpOptions).pipe(
+    tap(_ => this.log(`deleted job id=${id}`)),
+    catchError(this.handleError<Job>('deleteJob'))
+  );
+}
+
+/* GET heroes whose name contains search term */
+searchJobs(term: string): Observable<Job[]> {
+  if (!term.trim()) {
+    // if not search term, return empty job array.
+    return of([]);
+  }
+  return this.http.get<Job[]>(`${this.jobsUrl}/?name=${term}`).pipe(
+    tap(_ => this.log(`found jobs matching "${term}"`)),
+    catchError(this.handleError<Job[]>('searchJobs', []))
+  );
+}
+
 
 
     /** Log a JobService message with the MessageService */
