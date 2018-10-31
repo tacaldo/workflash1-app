@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Job } from '../job';
-import { JOBS } from '../mock-jobs';
+// import { JOBS } from '../mock-jobs';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -22,13 +22,7 @@ export class JobService {
 
     private jobsUrl = 'api/jobs';  // URL to web api
 
-
-    // getJobs(): Observable<Job[]> {
-    // // TODO: send the message _after_ fetching the heroes
-    //   this.messageService.add('JobService: fetched jobs');
-    //   return of(JOBS);
-    // }
-
+    
   /** GET heroes from the server */
   getJobs (): Observable<Job[]> {
     return this.http.get<Job[]>(this.jobsUrl)

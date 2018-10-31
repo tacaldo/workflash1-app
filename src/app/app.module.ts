@@ -12,6 +12,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { JobSearchComponent } from './components/job-search/job-search.component';
+import { UiModule } from './ui/ui.module';
 
 
 
@@ -27,7 +28,9 @@ import { JobSearchComponent } from './components/job-search/job-search.component
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+
+    UiModule
 
 
   ],
