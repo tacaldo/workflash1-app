@@ -17,6 +17,15 @@
     <label>name:
       <input [(ngModel)]="job.name" placeholder="name"/>
     </label>
+    <br>
+    <label>description:</label>
+    <br>
+    <mat-form-field class="example-full-width">
+        <!-- <input matInput placeholder="Favorite food" value="Sushi"> -->
+        <textarea [(ngModel)]="job.description" style="width:100%" ></textarea>
+    </mat-form-field>
+    
+
   </div>
 </div>
 <button (click)="goBack()">go back</button>
