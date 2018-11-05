@@ -16,7 +16,10 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { JobSearchComponent } from './components/job-search/job-search.component';
 import { UiModule } from './ui/ui.module';
 import {MatInputModule} from '@angular/material/input';
-
+import { JobPostComponent } from './components/job-post/job-post.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import {MatInputModule} from '@angular/material/input';
       InMemoryDataService, { dataEncapsulation: false }
     ),
     MatInputModule,
-
+    MatTabsModule,
+    MatButtonModule,
+    MatGridListModule,
     UiModule
 
 
@@ -45,7 +50,8 @@ import {MatInputModule} from '@angular/material/input';
     JobDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    JobSearchComponent
+    JobSearchComponent,
+    JobPostComponent
   ],
   bootstrap: [AppComponent]
 
