@@ -21,6 +21,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import { JobFindComponent } from './components/job-find/job-find.component';
 
 
 
@@ -54,7 +55,8 @@ import {MatCardModule} from '@angular/material/card';
     MessagesComponent,
     DashboardComponent,
     JobSearchComponent,
-    JobPostComponent
+    JobPostComponent,
+    JobFindComponent
   ],
   bootstrap: [AppComponent]
 
