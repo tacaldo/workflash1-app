@@ -20,6 +20,8 @@ import { JobPostComponent } from './components/job-post/job-post.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatTabsModule,
     MatButtonModule,
     MatGridListModule,
+    MatCardModule,
     UiModule
 
 
