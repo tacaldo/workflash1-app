@@ -1,21 +1,40 @@
 <h2>My Jobs</h2>
 <div>
   <label>Job name:
+    <br>
     <input #jobName />
   </label>
+  <br>
+  <label>Job description:
+    <br>
+    <input #jobDescription />
+  </label>
+
+
   <!-- (click) passes input value to add() and then clears the input -->
   <button (click)="add(jobName.value); jobName.value=''">
     add
   </button>
 </div>
-<ul class="jobs">
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Favorite food" value="Sushi">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Leave a comment"></textarea>
+    </mat-form-field>
+  </form>
+  
+<!-- <ul class="jobs">
     <li *ngFor="let job of jobs">
         <a routerLink="/detail/{{job.id}}">
           <span class="badge">{{job.id}}</span> {{job.name}}
         </a>
        <button title="delete job"(click)="delete(job)">x</button>
     </li>
-</ul>
+</ul> -->
 <!-- <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
