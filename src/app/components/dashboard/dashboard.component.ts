@@ -13,7 +13,9 @@ export class DashboardComponent implements OnInit {
   constructor(private jobService: JobService) { }
 
   ngOnInit() {
-    this.getJobs();
+    //this.getJobs();
+    
+
   }
 
   getJobs(): void {

@@ -1,4 +1,4 @@
-<h2>My Jobs</h2>
+<h4>My Jobs Test</h4>
 <div>
   <label>Job name:
     <br>
@@ -15,9 +15,15 @@
   <button (click)="add(jobName.value); jobName.value=''">
     add
   </button>
+  
+  <button (click)="getJobs();">
+    Get Jobs
+  </button>
+
+
 </div>
 
-<form class="example-form">
+<!-- <form class="example-form">
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Favorite food" value="Sushi">
     </mat-form-field>
@@ -25,7 +31,8 @@
     <mat-form-field class="example-full-width">
       <textarea matInput placeholder="Leave a comment"></textarea>
     </mat-form-field>
-  </form>
+  
+</form> -->
   
 <!-- <ul class="jobs">
     <li *ngFor="let job of jobs">
@@ -44,5 +51,19 @@
       (click)="delete(hero)">x</button>
   </li>
 </ul> -->
+<ul class="jobs">
+  <li *ngFor="let job of jobs">
+    <a routerLink="/detail/{{job.id}}">
+      <h2>anything..</h2>
+      <span class="badge">{{job.id}}</span> {{job.name}}
+    </a>
+  </li>
+</ul>
+
+
+
+
+
+
 
 

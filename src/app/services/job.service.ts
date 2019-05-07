@@ -20,16 +20,76 @@ export class JobService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-    private jobsUrl = 'api/jobs';  // URL to web api
+    // URL to web api
+    //private jobsUrl = 'api/jobs';  
+
+    //https://localhost:44365/api/jobs
+    private jobsUrl = '//localhost:44365/api/jobs';
+
+
+
 
     
   /** GET heroes from the server */
   getJobs (): Observable<Job[]> {
-    return this.http.get<Job[]>(this.jobsUrl)
+    
+    console.log('reached getJobs() before http.get call..')
+    this.log('fetched job test before tap')
+
+    return this.http.get<[Job]>(this.jobsUrl)
       .pipe(
+        tap(_ => this.log(`fetched job test in tap ref..`)),
         catchError(this.handleError('getJobs', []))
       );
+    
+
   }
+
+  getJobs2 (): Observable<Job[]> {
+    
+    console.log('reached getJobs2() before http.get call..')
+    this.log('fetched getJobs2() job test before tap')
+
+    return this.http.get<Job[]>(this.jobsUrl);
+      // .pipe(
+      //   tap(_ => this.log(`fetched job test in tap ref getJobs2()..`)),
+      //   catchError(this.handleError('getJobs2', []))
+      // );
+  }
+
+
+
+getJobs3(): void{
+  var data = null;
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = false;
+  
+  xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === 4) {
+      console.log(this.responseText);
+    }
+  });
+  
+  xhr.open("GET", "https://localhost:44365/api/jobs");
+  // xhr.setRequestHeader("cache-control", "no-cache");
+  // xhr.setRequestHeader("Postman-Token", "8667c38a-4d34-49cc-95ee-d75ca9556618");
+  
+  xhr.send(data);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
   /** GET job by id. Will 404 if id not found */
   getJob(id: number): Observable<Job> {

@@ -16,14 +16,23 @@ export class JobsComponent implements OnInit {
   //jobs = JOBS;
   jobs: Job[];
 
+  job: Job;
+
 
 
   constructor(private jobService: JobService) { }
-
-
+    
+  
   ngOnInit() {
-    this.getJobs();
+    // this.getJobs();
+    this.getJobs2();
+    this.getJobs3();
+
+    
   }
+
+
+
 
     // onSelect(job: Job): void {
     // this.selectedJob = job;
@@ -39,6 +48,31 @@ export class JobsComponent implements OnInit {
           .subscribe(jobs => this.jobs = jobs);
     }
 
+    getJobs2(): void {
+      this.jobService.getJobs2()
+      .subscribe(
+        (data: Job[]) => this.jobs = data,
+        (err: any) => console.log(err),
+        () => console.log('All done with getJobs2..')
+      );
+    }
+
+
+
+
+    getJobs3(): void {
+      this.jobService.getJobs3()
+      console.log('After getJobs3 reference...')
+
+    }
+
+
+
+
+
+
+
+
     add(name: string): void {
       name = name.trim();
       if (!name) { return; }
@@ -46,6 +80,9 @@ export class JobsComponent implements OnInit {
         .subscribe(job => {
           this.jobs.push(job);
         });
+
+        //testing
+        alert('hit job add part..');
     }
 
     delete(job: Job): void {
